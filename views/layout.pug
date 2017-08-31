@@ -1,0 +1,74 @@
+-
+	function checkSelected( id ) {
+		return selected === id ? "nav-selected" : ""
+	}
+
+mixin menu
+	a( href = "/" )
+		li( class = checkSelected( "home" ) )
+			div Home
+
+	a( href = "/pricing" class = checkSelected( "pricing" ) )
+		li( class = checkSelected( "pricing" ) )
+			div Pricing
+
+	a( href = "/contact" class = checkSelected( "contact" ) )
+		li( class = checkSelected( "contact" ) )
+			div Contact
+
+
+doctype html
+html
+	head
+		// Website created by Michael Savchuk (Pixelrobin)
+		title= "LTTutoring: Tutoring for Bellingham, WA Area"
+		
+		// Metas
+		meta( charset = "UTF-8" )
+		meta( name = "viewport" content = "width=device-width, inital-scale=1" )
+		meta( name = "description" content = "Lincoln + Thanh Tutoring " )
+		meta( name = "keywords" content = "tutoring,education,help,bellingham,lincoln,thanh,squalicum" )
+		meta( name = "author" content = "Lincoln + Thanh Tutoring" )
+
+		// Fonts
+		link( href = "https://fonts.googleapis.com/css?family=Zilla+Slab:400,700" rel= "stylesheet" )
+		link( href = "https://fonts.googleapis.com/css?family=Muli:400,700" rel = "stylesheet" )
+		link( href = "/fonts/font-awesome/css/font-awesome.min.css" rel = "stylesheet" )
+
+		// Stylesheets
+		link( href= "/stylesheets/normalize.css" rel= "stylesheet" )
+		link( href= "/stylesheets/skeleton.css" rel= "stylesheet" )
+		link( href= "/stylesheets/style.css" rel= "stylesheet" )
+
+	body
+		div( class = "everything" )
+			div( class= "navbar" )
+				a( href = "/" )
+					div( id = "header-cubes" class= "header-cubes" )
+						span( class= "leader blue" ) L
+							span INCOLN
+						span( class= "leader blue") T
+							span HANH
+						span( class= "leader grey" ) T
+							span UTORING
+
+				ul( class = "desktop-nav" )
+					+menu
+
+				div( class = "navbar-menu" id = "navbar-menu" )
+					span( class = "fa fa-bars" )
+
+				div( class = "mobile-nav" id = "mobile-nav" )
+					ul
+						+menu
+				
+				script( type = "text/javascript" src = "/javascripts/layout.js" )
+
+			div( class = "body-content" )
+				block content
+
+			div( class = "footer" )
+				p Copyright (C) Lincoln + Thanh Tutoring 2017. Website created by Michael Savchuk.
+		if authed
+			script( type = "text/javascript" src = "content-tools/content-tools.min.js" )
+			script( type = "text/javascript" src = "content-tools/editor.js" )

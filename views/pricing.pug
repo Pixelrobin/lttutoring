@@ -1,0 +1,28 @@
+extends layout
+
+block content
+	div( class = "content" )
+		h1( class = "centered" ) Pricing
+
+		div( class = "row" )
+			div( class = "six columns price" )
+				sup $
+				span( class = "amount" ) 20
+				span( class = "slash" ) /
+				span( class = "per" ) hour
+				h5
+					span( class = "fa fa-map-marker")
+					span Bellingham
+
+			div( class = "six columns price" )
+				sup $
+				span( class = "amount" ) 25
+				span( class = "slash" ) /
+				span( class = "per" ) hour
+				h5
+					span( class = "fa fa-map-marker")
+					span Near Bellingham
+		br
+		h5( class = "centered" style = "margin-bottom: 0.2em;" ) Schedule a session Now!
+		div( style = "margin: 0 auto; max-width: 200px" )
+			button( class = "button-primary u-full-width" href = "/contact" ) Contact us

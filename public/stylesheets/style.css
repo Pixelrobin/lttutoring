@@ -1,0 +1,432 @@
+/* https://stackoverflow.com/questions/3790935/can-i-hide-the-html5-number-input-s-spin-box */
+/* Disables increment/decrement buttons on number inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+body {
+	overflow-x: hidden;
+}
+
+thead tr th {
+	font-weight: 700 !important;
+	font-size: 1.2em;
+}
+
+tbody tr th {
+	font-weight: 400 !important;
+}
+
+.everything {
+	min-height: 100vh;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.body-content {
+	padding-top: 72px;
+	padding-bottom: 30px;
+}
+
+.centered {
+	text-align: center;
+}
+
+.content {
+	box-sizing: border-box;
+	padding: 1.5rem;
+	width: 100%;
+	padding-bottom: 30px;
+}
+
+.div-break {
+	width: 100%;
+	height: 2em;
+}
+
+.banana {
+	display: none;
+}
+
+.navbar {
+	width: 100%;
+	height: 60px;
+	padding: 6px 0px;
+	position: fixed;
+	top: 0;
+	background-color: #383838;
+	z-index: 1000;
+}
+
+.desktop-nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	float: right;
+	display: none;
+	margin-right: 1.5em;
+}
+
+.desktop-nav li {
+	float: left;
+	display: block;
+	padding: 0 0.5em;
+	font-size: 1.5em;
+	/*line-height: 60px;*/
+	padding-top: 10px;
+	display: block;
+	color: white;
+	text-decoration: none !important;
+}
+
+.desktop-nav li a {
+	display: block;
+	color: white;
+	text-decoration: none !important;
+}
+
+.desktop-nav li a:hover {
+	margin-top: 0;
+}
+
+.desktop-nav .nav-selected div {
+	border-bottom: 3px solid white;
+}
+
+.navbar-menu {
+	display: inline-block;
+	color: white;
+	font-size: 48px;
+	float: right;
+	margin-right: 18px;
+	line-height: 60px;
+}
+
+.mobile-nav {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	margin-top: 66px;
+	background-color: #383838;
+	color: white;
+	text-transform: uppercase;
+	font-size: 2em;
+	overflow: hidden;
+	height: 0;
+	-webkit-transition: height 0.25s; /* Safari */
+    transition: height 0.25s;
+}
+
+.mobile-nav.open {
+	height: 275px !important;
+}
+
+.mobile-nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.mobile-nav ul li {
+	padding: 0.5em 0;
+	width: 100%;
+	padding-left: 1em;
+
+}
+
+.mobile-nav a {
+	color: white !important;
+	text-decoration: none;
+}
+
+.mobile-nav .nav-selected {
+	background-color: #777;
+}
+
+.header-image {
+	width: 100vw;
+	/*height: 500px;*/
+	/*max-height: 50vw;
+	min-height: 30vh;*/
+	background-image: url( "/images/homepage-header.jpg" );
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/*margin-top: 60px;*/
+}
+
+.header-gradient {
+	width: 100%;
+	height: 100%;
+
+	/* Generated with http://www.cssmatic.com/gradient-generator */
+	background: rgba(179,235,192,0.59);
+	background: -moz-linear-gradient(-45deg, rgba(179,235,192,0.59) 0%, rgba(188,224,238,0.63) 100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(179,235,192,0.59)), color-stop(100%, rgba(188,224,238,0.63)));
+	background: -webkit-linear-gradient(-45deg, rgba(179,235,192,0.59) 0%, rgba(188,224,238,0.63) 100%);
+	background: -o-linear-gradient(-45deg, rgba(179,235,192,0.59) 0%, rgba(188,224,238,0.63) 100%);
+	background: -ms-linear-gradient(-45deg, rgba(179,235,192,0.59) 0%, rgba(188,224,238,0.63) 100%);
+	background: linear-gradient(135deg, rgba(179,235,192,0.59) 0%, rgba(188,224,238,0.63) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3ebc0', endColorstr='#bce0ee', GradientType=1 );
+}
+
+.header-gradient span {
+	display: block;
+	text-align: left;
+	font-weight: bold;
+	font-family: 'Zilla Slab', serif;
+	font-size: 4em;
+	padding: 100px 1.5rem;
+	max-width: 960px;
+	margin: 0 auto;
+	line-height: 1em;
+}
+
+.header-gradient span span {
+	font-size: 0.4em;
+	font-family: "Muli", Arial, sans-serif;;
+	margin: 0;
+	padding: 0;
+	line-height: 2em
+}
+
+.header-cubes {
+	display: inline-block;
+	width: auto;
+	float: left;
+	margin-left: 6px;
+}
+
+.header-cubes span.leader {
+	width: 48px;
+	height: 48px;
+	display: inline-block;
+	overflow: hidden;
+	padding: 6px;
+	font-family: "Zilla Slab", serif;
+	font-size: 40px;
+	line-height: 50px;
+	text-align: center;
+	color: white;
+	margin-right: 6px;
+	font-weight: bold;
+	border-radius: 0.25em;
+	white-space: nowrap;
+
+	-webkit-transition: width 0.25s; /* For Safari 3.1 to 6.0 */
+	transition: width 0.25s;
+}
+
+.header-cubes span.leader.blue {
+	background-color: #0f80b0;
+}
+
+.header-cubes span.leader.grey {
+	background-color: #777;
+	/*color: #383838;*/
+}
+
+.header-cubes span span {
+	display: none;
+}
+
+.header-text {
+	color: #383838;
+	text-align: center;
+	font-family: 'Zilla Slab', serif;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 30px;
+	text-align: center !important;
+	font-weight: 100;
+	color: #777;
+}
+
+.footer p {
+	margin: 0;
+	padding: 0;
+}
+
+.cta-container {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: -30px;
+	max-width: 1200px;
+}
+
+.cta {
+	background-color: #0f80b0;
+	color: white;
+	border-radius: 8px;
+	padding: 0.5em;
+	font-size: 2em;
+	margin-bottom: 15px;
+	-webkit-transition: transform 0.25s; /* Safari */
+    transition: transform 0.25s;
+    min-height: 100%;
+}
+
+.cta:hover {
+	background-color: #0f8aba;
+	transform: translateY( -5px );
+}
+
+.cta.disabled {
+	background-color: #777 !important;
+	color: #bbb !important;
+	cursor: no-drop;
+}
+
+.cta-icon {
+	font-size: 2em;
+	width: 100%;
+	text-align: center;
+}
+
+.cta-text {
+	text-align: center;
+	font-weight: 700;
+}
+
+table.collapsable thead tr th span {
+	float: right;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+table.collapsable tbody {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+}
+
+.collapsable-list {
+	background-color: #f0f0f0;
+	border-color: #4f4f4f;
+	border-width: 3px;
+	border-radius: 8px;
+	border-style: solid;
+	margin-bottom: 0.5rem;
+}
+
+.collapsable-list .title {
+	width: 100%;
+	padding: 0.5em 1em;
+	box-sizing: border-box;
+	color: #4f4f4f;
+	font-weight: 700;
+}
+
+.collapsable-list .title .fa {
+	float: right;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.collapsable-list ul {
+	display: block;
+	overflow: hidden;
+	margin: 0;
+    list-style: none;
+    padding-top: 0.5em;
+    border-top: 3px solid #4f4f4f;
+}
+
+.collapsable-list ul li {
+	margin-left: 1rem;
+}
+
+.collapsable-list ul.collapsed {
+	display: none;
+}
+
+.price {
+	text-align: center;
+	background-color: #f0f0f0;
+	border-color: #4f4f4f;
+	border-width: 3px;
+	border-radius: 8px;
+	border-style: solid;
+	padding-bottom: 20px;
+	margin-bottom: 15px;
+}
+
+.price sup {
+	font-size: 3em;
+	color: #0f80b0;
+}
+
+.price .amount {
+	font-size: 6em;
+}
+
+.price .per {
+	font-size: 1.8em;
+	color: #0f80b0;
+}
+
+.price .slash {
+	font-family: Arial;
+	
+	font-size: 2.75em;
+	color: #0f80b0;
+}
+
+.price h5 {
+	margin-top: -1em;
+}
+
+.price h5 .fa {
+	margin-right: 0.25em;
+}
+
+@media ( min-width: 550px ) {
+	.cta:first-child {margin-left: 0;}
+
+	.content {
+		width: 80%;
+		max-width: 960px;
+		margin: 0 auto;
+	}
+
+	.navbar-menu {
+		display: none;
+	}
+
+	.desktop-nav {
+		display: inline;
+	}
+
+	.collapsable-list {
+		margin-bottom: 1.5rem;
+	}
+
+	.collapsable-list .title span {
+		display: none;
+	}
+
+	.collapsable-list ul {
+		display: block !important;
+	}
+}
+
+@media ( min-width: 1000px ) {
+	.header-cubes span.leader:hover {
+		width: 6em;
+	}
+
+	.header-cubes span.leader:hover span {
+		display: inline;
+	}
+}

@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	script( type = "text/javascript" src = "/javascripts/contactform.js" )
+
+	div( class = "content" )
+		h2 Contact us
+
+		div( class = "u-full-width" )
+			form( action = "/thanks" method = "post" onsubmit = "return validateForm()" )
+				div( class = "row" )
+					div( class = "ten columns" )
+						label( for = "name-input" ) Name
+						input( class = "u-full-width" name = "name" type = "text" id = "name-input" )
+
+						label( for = "phone-input" ) Phone number
+						input( class = "u-full-width" name = "phone" type = "number" id = "phone-input" )
+
+						label( for = "email-input" ) Email
+						input( class = "u-full-width" name = "email" type = "email" id = "email-input" )
+
+						label( for = "message-input" ) Message
+						textarea( class = "u-full-width" name = "message" id = "message-input" )
+
+						input( class = "banana" name = "banana" type = "text" id = "banana-input" value = "banana" )
+
+				input( class = "button-primary" type = "submit" value = "submit" )

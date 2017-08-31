@@ -1,0 +1,134 @@
+extends layout
+
+block content
+	div( class = "header-image" )
+		div( class = "header-gradient" )
+			//h1( class = "header-text" )
+			span LINCOLN + THANH
+				br
+				| TUTORING
+				span Bellingham, Washington
+	div( class = "cta-container" )
+		div( class = "row u-full-width" )
+			a( href = "/contact" )
+				div( class = "cta four columns" )
+					div( class = "cta-icon" )
+						span( class = "fa fa-envelope" )
+					div( class = "cta-text" ) CONTACT US
+			div( class = "cta disabled four columns" )
+				div( class = "cta-icon" )
+					span( class = "fa fa-wifi" )
+				div( class = "cta-text" ) ONLINE TUTORING
+			div( class = "cta disabled four columns" )
+				div( class = "cta-icon" )
+					span( class = "fa fa-pencil" )
+				div( class = "cta-text" ) PRACTICE PROBLEMS
+
+	div( class = "content" )
+		div( class = "div-break" )
+
+		if authed
+			h1 YOU ARE LOGGED IN :D
+
+		h1 About us
+
+		p Lincoln + Tutoring is a small tutoring company from Bellingham, Washington run by students, for students.
+
+		p We started as a simple craigslist ad primarily focusing on helping kids with math. We now offer tutoring for a wide range of classes and skill levels. Services are available for both struggling students falling behind and students who are looking to improve and get ahead in class. #[a( href = "/contact" ) Contact us] for any questions or comments!
+
+		div( style = "margin: 0 auto; max-width: 400px" )
+			button( class = "button-primary u-full-width" href = "/contact" ) Learn more about us and our tutors
+
+		div( class = "div-break" )
+		h1 Subjects we cover
+
+		div( class = "subjects" )
+			div( class = "row" )
+				div( class = "four columns" )
+					div( class = "collapsable-list" )
+						div( class = "title" ) Test
+							span( class = "fa fa-angle-down" )
+
+						ul
+							li Item 1
+							li Item 2
+							li Item 3
+
+				div( class = "four columns" )
+					div( class = "collapsable-list" )
+						div( class = "title" ) Test
+							span( class = "fa fa-angle-right" )
+
+						ul( class = "collapsed" )
+							li Item 1
+							li Item 2
+							li Item 3
+
+				div( class = "four columns" )
+					div( class = "collapsable-list" )
+						div( class = "title" ) Test
+							span( class = "fa fa-angle-right" )
+
+						ul( class = "collapsed" )
+							li Item 1
+							li Item 2
+							li Item 3
+
+			div( class = "row" )
+				div( class = "four columns" )
+					div( class = "collapsable-list" )
+						div( class = "title" ) Test
+							span( class = "fa fa-angle-right" )
+
+						ul( class = "collapsed" )
+							li Item 1
+							li Item 2
+							li Item 3
+
+				div( class = "four columns" )
+					div( class = "collapsable-list" )
+						div( class = "title" ) Test
+							span( class = "fa fa-angle-right" )
+
+						ul( class = "collapsed" )
+							li Item 1
+							li Item 2
+							li Item 3
+
+				div( class = "four columns" )
+					div( class = "collapsable-list" )
+						div( class = "title" ) Test
+							span( class = "fa fa-angle-right" )
+
+						ul( class = "collapsed" )
+							li Item 1
+							li Item 2
+							li Item 3
+
+		div( class = "div-break" )
+		h1 Our pricing
+
+		div( class = "row u-full-width" )
+			div( class = "six columns price" )
+				sup $
+				span( class = "amount" ) 20
+				span( class = "slash" ) /
+				span( class = "per" ) hour
+				h5
+					span( class = "fa fa-map-marker")
+					span Bellingham
+
+			div( class = "six columns price" )
+				sup $
+				span( class = "amount" ) 25
+				span( class = "slash" ) /
+				span( class = "per" ) hour
+				h5
+					span( class = "fa fa-map-marker")
+					span Near Bellingham
+		br
+		h5( class = "centered" style = "margin-bottom: 0.2em;" ) Schedule a session Now!
+		div( style = "margin: 0 auto; max-width: 200px" )
+			button( class = "button-primary u-full-width" href = "/contact" ) Contact us
+
+	script( type = "text/javascript" src = "/javascripts/index.js" )
